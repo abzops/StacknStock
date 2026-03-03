@@ -1,0 +1,585 @@
+<!-- /about.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Stack n Stock</title>
+    <meta
+      name="description"
+      content="The story behind Stack n Stock — modular, portable, scalable container-native warehouse infrastructure."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <div id="page-loader" aria-hidden="true">
+      <img
+        class="nav-logo"
+        src="assets/img/logo.png"
+        alt="Stack n Stock logo"
+        width="30%"
+        height="20%"
+        onerror="
+          this.outerHTML =
+            '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+        "
+      />
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-pct" id="loader-pct">0%</div>
+    </div>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav class="navbar" aria-label="Main navigation">
+      <!-- Logo: Desktop 160x32px | Mobile 140x28px | Clearspace ≥8px -->
+      <a href="index.html" aria-label="Stack n Stock home">
+        <img
+          class="nav-logo"
+          src="assets/img/logo.png"
+          alt="Stack n Stock logo"
+          width="160"
+          height="100%"
+          onerror="
+            this.outerHTML =
+              '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+          "
+        />
+      </a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Demo</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="about-h1">
+      <div class="page-hero-inner">
+        <div
+          class="iso-label"
+          style="
+            color: rgba(253, 226, 21, 0.5);
+            border-color: rgba(253, 226, 21, 0.15);
+          "
+        >
+          SNS-ABOUT / POD-TEAM / REV-B
+        </div>
+        <h1 id="about-h1">Built for the<br /><span>next warehouse.</span></h1>
+        <p>
+          Founded on the belief that the 40-foot shipping container is the most
+          proven, scalable, and portable unit of infrastructure ever made. We
+          put it to work for modern logistics.
+        </p>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-inner">
+        <span>Modular</span><span class="ticker-sep">◆</span>
+        <span>Portable</span><span class="ticker-sep">◆</span>
+        <span>Scalable</span><span class="ticker-sep">◆</span>
+        <span>Container-Native Engineering</span
+        ><span class="ticker-sep">◆</span> <span>ISO 668 Standard</span
+        ><span class="ticker-sep">◆</span> <span>Zero Capital Write-Down</span
+        ><span class="ticker-sep">◆</span> <span>Relocatable Assets</span
+        ><span class="ticker-sep">◆</span> <span>Modular</span
+        ><span class="ticker-sep">◆</span> <span>Portable</span
+        ><span class="ticker-sep">◆</span> <span>Scalable</span
+        ><span class="ticker-sep">◆</span>
+        <span>Container-Native Engineering</span
+        ><span class="ticker-sep">◆</span> <span>ISO 668 Standard</span
+        ><span class="ticker-sep">◆</span> <span>Zero Capital Write-Down</span
+        ><span class="ticker-sep">◆</span> <span>Relocatable Assets</span
+        ><span class="ticker-sep">◆</span>
+      </div>
+    </div>
+
+    <!-- ══ BRAND STORY ══ -->
+    <section class="story-section">
+      <div class="section-inner">
+        <div class="story-grid">
+          <div class="story-text reveal-left">
+            <p class="section-label">SNS-SEC-A1 / Story</p>
+            <h2 class="section-title" style="margin-bottom: 28px">
+              Why we<br />built this
+            </h2>
+            <p>
+              Traditional warehousing is a capital trap. You build, you're
+              stuck. Demand shifts, you can't move. Leases expire, you write off
+              millions in bespoke fit-out. Stack n Stock was born from
+              frustration with that model.
+            </p>
+            <div class="story-pullquote">
+              <p>
+                "Infrastructure should behave like the supply chains it serves:
+                responsive, lean, and relocatable."
+              </p>
+            </div>
+            <p>
+              We engineer each pod at our manufacturing facility to ISO 668
+              standards, integrating power, data, racking, MHE, and automation
+              before a single unit leaves the factory floor. Clients receive a
+              live, operational system — not a construction project.
+            </p>
+            <p>
+              From a single staging pod for a manufacturer's shop floor to a
+              multi-pod AS/RS hub serving thousands of e-commerce orders per
+              day, the unit of deployment is always the same: the pod.
+            </p>
+          </div>
+
+          <div class="reveal-right">
+            <div class="spec-card bracket-card">
+              <div class="spec-header">
+                <span>CONTAINER SPECIFICATION</span>
+                <span>ISO 668 / 1CC</span>
+              </div>
+              <div class="spec-body">
+                <div class="spec-row">
+                  <span class="spec-key">Length</span
+                  ><span class="spec-val">12,192 mm</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Width</span
+                  ><span class="spec-val">2,438 mm</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Height (std)</span
+                  ><span class="spec-val">2,591 mm</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Max Gross Mass</span
+                  ><span class="spec-val">30,480 kg</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Stacking (max)</span
+                  ><span class="spec-val">9 high</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Corner Casting</span
+                  ><span class="spec-val">ISO 1161</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Racking System</span
+                  ><span class="spec-val">Adjustable / AS-RS</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Power</span
+                  ><span class="spec-val">Single / 3-Phase</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Data</span
+                  ><span class="spec-val">Cat6A / Fibre</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Build Standard</span
+                  ><span class="spec-val">Factory Commissioned</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- stats mini -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1px;
+                background: rgba(255, 255, 255, 0.07);
+                margin-top: 1px;
+              "
+            >
+              <div style="background: var(--surface); padding: 28px 24px">
+                <div
+                  style="
+                    font-family: &quot;Bebas Neue&quot;, sans-serif;
+                    font-size: 3rem;
+                    color: var(--yellow);
+                    line-height: 1;
+                    margin-bottom: 4px;
+                  "
+                >
+                  72H
+                </div>
+                <div
+                  style="
+                    font-size: 0.68rem;
+                    color: var(--muted);
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  "
+                >
+                  Deploy Time
+                </div>
+              </div>
+              <div style="background: var(--surface); padding: 28px 24px">
+                <div
+                  style="
+                    font-family: &quot;Bebas Neue&quot;, sans-serif;
+                    font-size: 3rem;
+                    color: var(--yellow);
+                    line-height: 1;
+                    margin-bottom: 4px;
+                  "
+                >
+                  0
+                </div>
+                <div
+                  style="
+                    font-size: 0.68rem;
+                    color: var(--muted);
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  "
+                >
+                  Permits Required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ WHY CONTAINERS ══ -->
+    <section class="logic-section">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-A2 / Engineering Logic</p>
+        <h2 class="section-title reveal d1">
+          The 40-foot<br />container logic
+        </h2>
+        <div class="stack-modules">
+          <div class="stack-module reveal d1">
+            <div class="stack-module-num">SPEC-01</div>
+            <div>
+              <h3>Universal Standard</h3>
+              <p>
+                ISO 668 Class 1C containers share identical corner-casting
+                geometry across every port, rail yard, and truck chassis on
+                earth. Our pods inherit this interoperability — they travel on
+                standard equipment and fit standard cranes without special
+                permits.
+              </p>
+            </div>
+          </div>
+          <div class="stack-module reveal d2">
+            <div class="stack-module-num">SPEC-02</div>
+            <div>
+              <h3>Structural Integrity</h3>
+              <p>
+                A standard 40-ft container carries up to 30,480 kg and stacks
+                9-high. That structural headroom means we can install dense
+                racking, conveyors, and AS/RS machinery without compromising pod
+                integrity or requiring civil groundwork.
+              </p>
+            </div>
+          </div>
+          <div class="stack-module reveal d3">
+            <div class="stack-module-num">SPEC-03</div>
+            <div>
+              <h3>Rapid Logistics</h3>
+              <p>
+                Because our pods conform to ISO container profiles, they can be
+                moved via existing freight infrastructure — flatbed trucks,
+                rail, and ship — without oversize load permits. Your warehouse
+                follows your business wherever it grows.
+              </p>
+            </div>
+          </div>
+          <div class="stack-module reveal d4">
+            <div class="stack-module-num">SPEC-04</div>
+            <div>
+              <h3>Modular Composition</h3>
+              <p>
+                40-ft pods interlock end-to-end or side-by-side. Two pods form
+                an 80-ft aisle. Four pods form a 2×2 picking matrix with
+                internal connecting openings. The geometry scales predictably —
+                no custom engineering for each new layout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ VALUES ══ -->
+    <section class="values-section">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-A3 / Principles</p>
+        <h2 class="section-title reveal d1">What we<br />stand for</h2>
+        <div class="values-grid">
+          <div class="value-item bracket-card reveal d1">
+            <div class="value-icon">
+              <!-- Scalability: expanding grid -->
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="1" width="8" height="8" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="13" y="1" width="8" height="8" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="1" y="13" width="8" height="8" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="13" y="13" width="8" height="8" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="9" y1="5" x2="13" y2="5" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="9" y1="17" x2="13" y2="17" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="5" y1="9" x2="5" y2="13" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="17" y1="9" x2="17" y2="13" stroke="#FDE215" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>Scalability</h3>
+            <p>
+              Every system decision is made with scale in mind. Adding capacity
+              means ordering another pod — not redesigning your facility.
+            </p>
+          </div>
+          <div class="value-item bracket-card reveal d2">
+            <div class="value-icon">
+              <!-- Futuristic: circuit / tech nodes -->
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="11" cy="11" r="2.5" stroke="#FDE215" stroke-width="1.5"/>
+                <circle cx="3" cy="4" r="1.5" stroke="#FDE215" stroke-width="1.2"/>
+                <circle cx="19" cy="4" r="1.5" stroke="#FDE215" stroke-width="1.2"/>
+                <circle cx="3" cy="18" r="1.5" stroke="#FDE215" stroke-width="1.2"/>
+                <circle cx="19" cy="18" r="1.5" stroke="#FDE215" stroke-width="1.2"/>
+                <line x1="4.5" y1="4.5" x2="9" y2="9" stroke="#FDE215" stroke-width="1"/>
+                <line x1="17.5" y1="4.5" x2="13" y2="9" stroke="#FDE215" stroke-width="1"/>
+                <line x1="4.5" y1="17.5" x2="9" y2="13" stroke="#FDE215" stroke-width="1"/>
+                <line x1="17.5" y1="17.5" x2="13" y2="13" stroke="#FDE215" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3>Futuristic</h3>
+            <p>
+              We integrate AS/RS, WMS connectivity, and sensor infrastructure as
+              standard — ready for automation today and tomorrow.
+            </p>
+          </div>
+          <div class="value-item bracket-card reveal d3">
+            <div class="value-icon">
+              <!-- Portability: container with movement arrow -->
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="7" width="15" height="9" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="5" y1="7" x2="5" y2="16" stroke="#FDE215" stroke-width="1" opacity="0.6"/>
+                <line x1="9" y1="7" x2="9" y2="16" stroke="#FDE215" stroke-width="1" opacity="0.6"/>
+                <line x1="13" y1="7" x2="13" y2="16" stroke="#FDE215" stroke-width="1" opacity="0.6"/>
+                <line x1="18" y1="11.5" x2="21" y2="11.5" stroke="#FDE215" stroke-width="1.5"/>
+                <polyline points="19,9 21,11.5 19,14" stroke="#FDE215" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <h3>Portability</h3>
+            <p>
+              No asset should be stranded. Our pods are designed to move with
+              your business across cities, countries, and supply chain
+              configurations.
+            </p>
+          </div>
+          <div class="value-item bracket-card reveal d4">
+            <div class="value-icon">
+              <!-- Growth: ascending bar chart -->
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="1" y1="20" x2="21" y2="20" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="2" y="13" width="4" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="9" y="8" width="4" height="12" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="16" y="3" width="4" height="17" stroke="#FDE215" stroke-width="1.5"/>
+                <polyline points="4,12 11,7 18,2" stroke="#FDE215" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3>Growth</h3>
+            <p>
+              We grow when our clients grow. Our commercial model is structured
+              to align pod deployment with operational expansion milestones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TEAM ══ -->
+    <section class="team-section">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-A4 / People</p>
+        <h2 class="section-title reveal d1">The team<br />behind the pods</h2>
+        <div class="team-grid">
+          <div class="team-card bracket-card reveal d1">
+            <div class="team-avatar">JS</div>
+            <h3>Jithin Stalin</h3>
+            <div class="role">Chief Executive Officer</div>
+            <div class="iso-label">CEO / EXEC-01</div>
+          </div>
+          <div class="team-card bracket-card reveal d2">
+            <div class="team-avatar">AG</div>
+            <h3>Abhijith T Gopi</h3>
+            <div class="role">Chief Technology Officer</div>
+            <div class="iso-label">CTO / EXEC-02</div>
+          </div>
+          <div class="team-card bracket-card reveal d3">
+            <div class="team-avatar">JM</div>
+            <h3>Jazeel Muhammed</h3>
+            <div class="role">Head of Operations</div>
+            <div class="iso-label">OPS / LEAD-01</div>
+          </div>
+          <div class="team-card bracket-card reveal d4">
+            <div class="team-avatar">SS</div>
+            <h3>Siva Sankar</h3>
+            <div class="role">Manufacturing Manager</div>
+            <div class="iso-label">MFG / LEAD-02</div>
+          </div>
+          <div class="team-card bracket-card reveal d5">
+            <div class="team-avatar">PH</div>
+            <h3>Phalgu</h3>
+            <div class="role">Commercials &amp; Partnerships Lead</div>
+            <div class="iso-label">COMM / LEAD-03</div>
+          </div>
+          <div class="team-card bracket-card reveal d1">
+            <div class="team-avatar">JG</div>
+            <h3>Joseph George</h3>
+            <div class="role">Principal Strategy</div>
+            <div class="iso-label">STRAT / LEAD-04</div>
+          </div>
+          <div class="team-card bracket-card reveal d2">
+            <div class="team-avatar">AM</div>
+            <h3>Amina</h3>
+            <div class="role">People &amp; Projects Lead</div>
+            <div class="iso-label">PPL / LEAD-05</div>
+          </div>
+          <div class="team-card bracket-card reveal d3">
+            <div class="team-avatar">SP</div>
+            <h3>Saravana P</h3>
+            <div class="role">AS/RS Lead</div>
+            <div class="iso-label">ASRS / LEAD-06</div>
+          </div>
+          <div class="team-card bracket-card reveal d4">
+            <div class="team-avatar">AK</div>
+            <h3>Aakash Mangalathu</h3>
+            <div class="role">Infra &amp; MHE Lead</div>
+            <div class="iso-label">MHE / LEAD-07</div>
+          </div>
+          <div class="team-card bracket-card reveal d5">
+            <div class="team-avatar">AB</div>
+            <h3>Abhinand</h3>
+            <div class="role">Operations Intern</div>
+            <div class="iso-label">OPS / INTERN-01</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <!-- Corner castings -->
+      <div class="cta-casting tl" aria-hidden="true"></div>
+      <div class="cta-casting tr" aria-hidden="true"></div>
+      <div class="cta-casting bl" aria-hidden="true"></div>
+      <div class="cta-casting br" aria-hidden="true"></div>
+      <div class="cta-rail" aria-hidden="true"></div>
+      <!-- Top ISO label stripe -->
+      <div class="cta-container-stripe" aria-hidden="true">
+        <span>SNS / 40FT POD-SYSTEM</span>
+        <span>MAX GROSS: 30,480 KG &nbsp;·&nbsp; ISO 668 CLASS 1CC</span>
+        <span>REV-B / 2025</span>
+      </div>
+      <!-- Ghost container watermark -->
+      <div class="cta-watermark" aria-hidden="true">
+        <svg width="900" height="260" viewBox="0 0 900 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="40" width="880" height="180" stroke="#FDE215" stroke-width="2"/>
+          <rect x="10" y="40" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="866" y="40" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="10" y="196" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="866" y="196" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <line x1="100" y1="40" x2="100" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="190" y1="40" x2="190" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="280" y1="40" x2="280" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="370" y1="40" x2="370" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="460" y1="40" x2="460" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="550" y1="40" x2="550" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="640" y1="40" x2="640" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="730" y1="40" x2="730" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="820" y1="40" x2="820" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <rect x="10" y="40" width="880" height="10" fill="#FDE215"/>
+          <line x1="450" y1="0" x2="450" y2="40" stroke="#FDE215" stroke-width="2"/>
+          <line x1="350" y1="40" x2="450" y2="10" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="550" y1="40" x2="450" y2="10" stroke="#FDE215" stroke-width="1.5"/>
+          <rect x="438" y="0" width="24" height="10" stroke="#FDE215" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="cta-inner reveal">
+        <p class="section-label">SNS-SEC-A5 / Next Step</p>
+        <h2>Come build<br /><span>with us.</span></h2>
+        <p>
+          Whether you're a potential client, partner, or future team member —
+          we'd love to hear from you.
+        </p>
+        <a href="contact.html" class="btn-primary">Get in Touch</a>
+      </div>
+      <div class="cta-container-base" aria-hidden="true">
+        <span>DEPLOY TIME: 72H</span>
+        <span>ISO 40FT · CORNER CASTING ISO 1161 · MHE INTEGRATED · AS/RS READY</span>
+        <span>POD-A01 / SNS-BUILD-2025</span>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <div class="iso-label">SNS / MODULAR LOGISTICS</div>
+          <img
+            class="nav-logo"
+            src="assets/img/logo.png"
+            alt="Stack n Stock logo"
+            width="70%"
+            height="60%"
+            onerror="
+              this.outerHTML =
+                '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+            "
+          />
+
+          <p class="footer-tagline">
+            Container-native warehouse infrastructure engineered for the next
+            generation of logistics operations.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:hello@stacknstock.com">hello@stacknstock.com</a>
+            </li>
+            <li>
+              <a href="https://www.stacknstock.com">www.stacknstock.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Stack n Stock. All rights reserved.</span
+        >
+        <span class="footer-iso"
+          >ISO 40FT / POD-SYSTEMS / REV-B / BUILD-2025</span
+        >
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

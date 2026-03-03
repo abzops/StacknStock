@@ -1,0 +1,385 @@
+<!-- /contact.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Stack n Stock</title>
+    <meta
+      name="description"
+      content="Book a demo, request a feasibility study, or enquire about pod configurations. Stack n Stock responds within one business day."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <div id="page-loader" aria-hidden="true">
+      <img
+        class="nav-logo"
+        src="assets/img/logo.png"
+        alt="Stack n Stock logo"
+        width="30%"
+        height="20%"
+        onerror="
+          this.outerHTML =
+            '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+        "
+      />
+
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-pct" id="loader-pct">0%</div>
+    </div>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav class="navbar" aria-label="Main navigation">
+      <!-- Logo: Desktop 160x32px | Mobile 140x28px | Clearspace ≥8px -->
+      <a href="index.html" aria-label="Stack n Stock home">
+        <img
+          class="nav-logo"
+          src="assets/img/logo.png"
+          alt="Stack n Stock logo"
+          width="160"
+          height="100%"
+          onerror="
+            this.outerHTML =
+              '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+          "
+        />
+      </a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Demo</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="contact-h1">
+      <div class="page-hero-inner">
+        <div
+          class="iso-label"
+          style="
+            color: rgba(253, 226, 21, 0.5);
+            border-color: rgba(253, 226, 21, 0.15);
+          "
+        >
+          SNS-CONTACT / POD-ENQ / REV-B
+        </div>
+        <h1 id="contact-h1">Let's talk<br /><span>logistics.</span></h1>
+        <p>
+          Book a discovery call, request a feasibility study, or ask how pods
+          can transform your operation. We respond within one business day.
+        </p>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-inner">
+        <span>Response within 24hrs</span><span class="ticker-sep">◆</span>
+        <span>No obligation</span><span class="ticker-sep">◆</span>
+        <span>Site assessment available</span><span class="ticker-sep">◆</span>
+        <span>Feasibility study on request</span
+        ><span class="ticker-sep">◆</span> <span>Engineering-led team</span
+        ><span class="ticker-sep">◆</span> <span>Response within 24hrs</span
+        ><span class="ticker-sep">◆</span> <span>No obligation</span
+        ><span class="ticker-sep">◆</span> <span>Site assessment available</span
+        ><span class="ticker-sep">◆</span>
+        <span>Feasibility study on request</span
+        ><span class="ticker-sep">◆</span> <span>Engineering-led team</span
+        ><span class="ticker-sep">◆</span>
+      </div>
+    </div>
+
+    <!-- ══ CONTACT SECTION ══ -->
+    <section class="contact-section">
+      <div class="section-inner">
+        <div class="contact-wrap">
+          <!-- Form side -->
+          <div>
+            <p class="section-label reveal">SNS-SEC-C1 / Enquiry Form</p>
+            <h2 class="section-title reveal d1" style="margin-bottom: 36px">
+              Send us<br />a message
+            </h2>
+
+            <form
+              class="contact-form reveal d2"
+              id="contact-form"
+              novalidate
+              aria-label="Contact form"
+            >
+              <div class="form-field">
+                <label for="cf-name"
+                  >Full Name
+                  <span aria-hidden="true" style="color: var(--yellow)"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  id="cf-name"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Your full name"
+                  aria-required="true"
+                />
+                <span class="field-error" id="err-name" role="alert"
+                  >Please enter your full name.</span
+                >
+              </div>
+              <div class="form-field">
+                <label for="cf-email"
+                  >Work Email
+                  <span aria-hidden="true" style="color: var(--yellow)"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="email"
+                  id="cf-email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@company.com"
+                  aria-required="true"
+                />
+                <span class="field-error" id="err-email" role="alert"
+                  >Please enter a valid email address.</span
+                >
+              </div>
+              <div class="form-field">
+                <label for="cf-company"
+                  >Company / Organisation
+                  <span aria-hidden="true" style="color: var(--yellow)"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  id="cf-company"
+                  name="company"
+                  autocomplete="organization"
+                  placeholder="Your company name"
+                  aria-required="true"
+                />
+                <span class="field-error" id="err-company" role="alert"
+                  >Please enter your company name.</span
+                >
+              </div>
+              <div class="form-field">
+                <label for="cf-message"
+                  >How can we help?
+                  <span aria-hidden="true" style="color: var(--yellow)"
+                    >*</span
+                  ></label
+                >
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  placeholder="Tell us about your operation — order volumes, SKU count, site location, timeline, current pain points..."
+                  aria-required="true"
+                ></textarea>
+                <span class="field-error" id="err-message" role="alert"
+                  >Please enter a message (at least 10 characters).</span
+                >
+              </div>
+              <button
+                type="submit"
+                class="btn-primary"
+                style="align-self: flex-start"
+              >
+                Send Enquiry
+              </button>
+            </form>
+
+            <div
+              class="form-success"
+              id="form-success"
+              role="status"
+              aria-live="polite"
+            >
+              <h3>Transmission Received</h3>
+              <p>
+                Thanks for reaching out. A Stack n Stock solutions engineer will
+                contact you within one business day.
+              </p>
+              <p
+                style="
+                  font-family: var(--mono);
+                  font-size: 0.6rem;
+                  color: var(--dim);
+                  margin-top: 20px;
+                  letter-spacing: 0.1em;
+                "
+              >
+                REF: SNS-ENQ-2025 · STATUS: PENDING RESPONSE
+              </p>
+            </div>
+          </div>
+
+          <!-- Info side -->
+          <div>
+            <p class="section-label reveal">SNS-SEC-C2 / Details</p>
+            <h2
+              class="section-title reveal d1"
+              style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 28px"
+            >
+              Contact<br />details
+            </h2>
+
+            <div class="contact-info">
+              <div class="info-block reveal d2">
+                <div class="info-label">Email</div>
+                <a href="mailto:hello@stacknstock.com">hello@stacknstock.com</a>
+              </div>
+              <div class="info-block reveal d3">
+                <div class="info-label">Website</div>
+                <a
+                  href="https://www.stacknstock.com"
+                  target="_blank"
+                  rel="noopener"
+                  >www.stacknstock.com</a
+                >
+              </div>
+              <div class="info-block reveal d4">
+                <div class="info-label">General Enquiries</div>
+                <p>
+                  For site assessments, feasibility studies, or partnership
+                  discussions, use the form or email us directly. We'll match
+                  you with the right solutions engineer.
+                </p>
+              </div>
+
+              <div class="process-box bracket-card reveal d5">
+                <div
+                  class="iso-label"
+                  style="
+                    margin-bottom: 24px;
+                    border-color: rgba(253, 226, 21, 0.15);
+                    color: rgba(253, 226, 21, 0.5);
+                  "
+                >
+                  SNS / DEMO ENGAGEMENT PROCESS
+                </div>
+                <div
+                  style="
+                    font-size: 0.82rem;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 20px;
+                    color: var(--text);
+                  "
+                >
+                  What happens next
+                </div>
+                <div class="process-step">
+                  <div class="ps-num">01</div>
+                  <div class="ps-text">
+                    We review your enquiry and match you with the right
+                    solutions engineer
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="ps-num">02</div>
+                  <div class="ps-text">
+                    30-minute discovery call to understand your operation,
+                    volumes, and goals
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="ps-num">03</div>
+                  <div class="ps-text">
+                    Indicative pod configuration, layout proposal, and ROI
+                    projection
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="ps-num">04</div>
+                  <div class="ps-text">
+                    Site visit and detailed feasibility study (where applicable)
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="ps-num">05</div>
+                  <div class="ps-text">
+                    Commercial proposal and deployment timeline, delivered
+                    within one week
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <div class="iso-label">SNS / MODULAR LOGISTICS</div>
+          <img
+            class="nav-logo"
+            src="assets/img/logo.png"
+            alt="Stack n Stock logo"
+            width="70%"
+            height="60%"
+            onerror="
+              this.outerHTML =
+                '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+            "
+          />
+
+          <p class="footer-tagline">
+            Container-native warehouse infrastructure engineered for the next
+            generation of logistics operations.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:hello@stacknstock.com">hello@stacknstock.com</a>
+            </li>
+            <li>
+              <a href="https://www.stacknstock.com">www.stacknstock.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Stack n Stock. All rights reserved.</span
+        >
+        <span class="footer-iso"
+          >ISO 40FT / POD-SYSTEMS / REV-B / BUILD-2025</span
+        >
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

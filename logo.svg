@@ -1,0 +1,13 @@
+<!-- /assets/img/logo.svg -->
+<!-- PLACEHOLDER: Replace with actual Stack n Stock brand logo -->
+<!-- Recommended: 160x32px desktop, 140x28px mobile, clearspace ≥8px -->
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="32" viewBox="0 0 160 32" role="img" aria-label="Stack n Stock">
+  <!-- Container icon mark -->
+  <rect x="0" y="4" width="24" height="24" fill="#FDE215" rx="0"/>
+  <rect x="2" y="6" width="20" height="3" fill="#000"/>
+  <line x1="8" y1="9" x2="8" y2="28" stroke="#000" stroke-width="1.5"/>
+  <line x1="14" y1="9" x2="14" y2="28" stroke="#000" stroke-width="1.5"/>
+  <line x1="20" y1="9" x2="20" y2="28" stroke="#000" stroke-width="1.5"/>
+  <!-- Wordmark -->
+  <text x="30" y="22" font-family="Montserrat, sans-serif" font-weight="900" font-size="14" fill="#ffffff" letter-spacing="0.5">STACK N STOCK</text>
+</svg>

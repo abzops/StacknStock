@@ -1,0 +1,1068 @@
+<!-- /index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack n Stock — Modular Container Warehouse Pods</title>
+    <meta
+      name="description"
+      content="Container-native fulfilment pods engineered for high-velocity warehousing. Deploy in 72 hours, scale infinitely."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- PAGE LOADER -->
+    <div id="page-loader" aria-hidden="true">
+      <img
+        class="nav-logo"
+        src="assets/img/logo.png"
+        alt="Stack n Stock logo"
+        width="30%"
+        height="20%"
+        onerror="
+          this.outerHTML =
+            '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+        "
+      />
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-pct" id="loader-pct">0%</div>
+    </div>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav class="navbar" aria-label="Main navigation">
+      <!-- Logo: Desktop 160x32px | Mobile 140x28px | Clearspace ≥8px -->
+      <a href="index.html" aria-label="Stack n Stock home">
+        <img
+          class="nav-logo"
+          src="assets/img/logo.png"
+          alt="Stack n Stock logo"
+          width="160"
+          height="100%"
+          onerror="
+            this.outerHTML =
+              '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+          "
+        />
+      </a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Demo</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="scanline" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          ISO 40FT / POD-A01 / REV-B &nbsp;·&nbsp; Container-Native Logistics
+        </p>
+        <h1 id="hero-h1">
+          <span class="line"><span>Stack.</span></span>
+          <span class="line"><span>Scale.</span></span>
+          <span class="line"><span>Stock.</span></span>
+        </h1>
+        <p class="hero-sub">
+          Container-native fulfilment pods that deploy in 72 hours, stack
+          infinitely, and relocate without a single construction permit.
+        </p>
+        <div class="hero-btns">
+          <a href="#roi" class="btn-primary">Calculate ROI</a>
+          <a href="contact.html" class="btn-ghost">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-svg-wrap">
+          <svg
+            width="480"
+            height="380"
+            viewBox="0 0 480 380"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- ─ TOP CONTAINER ─ -->
+            <rect
+              x="90"
+              y="30"
+              width="300"
+              height="90"
+              fill="#0d0d0d"
+              stroke="#FDE215"
+              stroke-width="1.5"
+            />
+            <rect x="90" y="30" width="300" height="6" fill="#FDE215" />
+            <!-- ribs -->
+            <line
+              x1="150"
+              y1="36"
+              x2="150"
+              y2="120"
+              stroke="#1e1e1e"
+              stroke-width="1.5"
+            />
+            <line
+              x1="210"
+              y1="36"
+              x2="210"
+              y2="120"
+              stroke="#1e1e1e"
+              stroke-width="1.5"
+            />
+            <line
+              x1="270"
+              y1="36"
+              x2="270"
+              y2="120"
+              stroke="#1e1e1e"
+              stroke-width="1.5"
+            />
+            <line
+              x1="330"
+              y1="36"
+              x2="330"
+              y2="120"
+              stroke="#1e1e1e"
+              stroke-width="1.5"
+            />
+            <!-- corner castings -->
+            <rect x="90" y="30" width="14" height="14" fill="#FDE215" />
+            <rect x="376" y="30" width="14" height="14" fill="#FDE215" />
+            <rect x="90" y="106" width="14" height="14" fill="#FDE215" />
+            <rect x="376" y="106" width="14" height="14" fill="#FDE215" />
+            <!-- label -->
+            <text
+              x="108"
+              y="44"
+              font-family="monospace"
+              font-size="7"
+              fill="#000"
+              letter-spacing="1.2"
+            >
+              SNS-POD-A03 / AS-RS CELL
+            </text>
+            <!-- interior sketch -->
+            <rect
+              x="110"
+              y="50"
+              width="40"
+              height="55"
+              fill="none"
+              stroke="#2a2a2a"
+              stroke-width="1"
+              stroke-dasharray="3,2"
+            />
+            <rect
+              x="155"
+              y="50"
+              width="40"
+              height="55"
+              fill="none"
+              stroke="#2a2a2a"
+              stroke-width="1"
+              stroke-dasharray="3,2"
+            />
+            <line
+              x1="110"
+              y1="70"
+              x2="150"
+              y2="70"
+              stroke="#252525"
+              stroke-width="1"
+            />
+            <line
+              x1="110"
+              y1="86"
+              x2="150"
+              y2="86"
+              stroke="#252525"
+              stroke-width="1"
+            />
+            <line
+              x1="155"
+              y1="70"
+              x2="195"
+              y2="70"
+              stroke="#252525"
+              stroke-width="1"
+            />
+            <line
+              x1="155"
+              y1="86"
+              x2="195"
+              y2="86"
+              stroke="#252525"
+              stroke-width="1"
+            />
+
+            <!-- ─ MID CONTAINER ─ -->
+            <rect
+              x="50"
+              y="120"
+              width="380"
+              height="100"
+              fill="#0a0a0a"
+              stroke="#FDE215"
+              stroke-width="1.5"
+            />
+            <rect
+              x="50"
+              y="120"
+              width="380"
+              height="5"
+              fill="#FDE215"
+              opacity=".7"
+            />
+            <!-- ribs -->
+            <line
+              x1="116"
+              y1="125"
+              x2="116"
+              y2="220"
+              stroke="#1a1a1a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="182"
+              y1="125"
+              x2="182"
+              y2="220"
+              stroke="#1a1a1a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="248"
+              y1="125"
+              x2="248"
+              y2="220"
+              stroke="#1a1a1a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="314"
+              y1="125"
+              x2="314"
+              y2="220"
+              stroke="#1a1a1a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="380"
+              y1="125"
+              x2="380"
+              y2="220"
+              stroke="#1a1a1a"
+              stroke-width="1.5"
+            />
+            <!-- doors -->
+            <rect
+              x="195"
+              y="140"
+              width="45"
+              height="70"
+              fill="#0d0d0d"
+              stroke="#2a2a2a"
+              stroke-width="1"
+            />
+            <rect
+              x="242"
+              y="140"
+              width="45"
+              height="70"
+              fill="#0d0d0d"
+              stroke="#2a2a2a"
+              stroke-width="1"
+            />
+            <circle
+              cx="238"
+              cy="175"
+              r="3"
+              fill="none"
+              stroke="#FDE215"
+              stroke-width="1"
+              opacity=".6"
+            />
+            <circle
+              cx="248"
+              cy="175"
+              r="3"
+              fill="none"
+              stroke="#FDE215"
+              stroke-width="1"
+              opacity=".6"
+            />
+            <!-- corner castings -->
+            <rect x="50" y="120" width="14" height="14" fill="#FDE215" />
+            <rect x="416" y="120" width="14" height="14" fill="#FDE215" />
+            <rect x="50" y="206" width="14" height="14" fill="#FDE215" />
+            <rect x="416" y="206" width="14" height="14" fill="#FDE215" />
+            <text
+              x="68"
+              y="133"
+              font-family="monospace"
+              font-size="7"
+              fill="#FDE215"
+              opacity=".7"
+              letter-spacing="1.2"
+            >
+              SNS-POD-A02 / 40FT PICK STATION
+            </text>
+
+            <!-- ─ BOTTOM CONTAINER ─ -->
+            <rect
+              x="20"
+              y="220"
+              width="440"
+              height="120"
+              fill="#080808"
+              stroke="#FDE215"
+              stroke-width="1.5"
+            />
+            <!-- ribs -->
+            <line
+              x1="84"
+              y1="220"
+              x2="84"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <line
+              x1="148"
+              y1="220"
+              x2="148"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <line
+              x1="212"
+              y1="220"
+              x2="212"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <line
+              x1="276"
+              y1="220"
+              x2="276"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <line
+              x1="340"
+              y1="220"
+              x2="340"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <line
+              x1="404"
+              y1="220"
+              x2="404"
+              y2="340"
+              stroke="#141414"
+              stroke-width="1.5"
+            />
+            <!-- corner castings glowing -->
+            <rect x="20" y="220" width="16" height="16" fill="#FDE215" />
+            <rect x="444" y="220" width="16" height="16" fill="#FDE215" />
+            <rect x="20" y="324" width="16" height="16" fill="#FDE215" />
+            <rect x="444" y="324" width="16" height="16" fill="#FDE215" />
+            <text
+              x="38"
+              y="234"
+              font-family="monospace"
+              font-size="7"
+              fill="#FDE215"
+              letter-spacing="1.2"
+            >
+              SNS-POD-A01 / 40FT STORAGE / ISO 668
+            </text>
+
+            <!-- ─ DIMENSION LINES (motif 4) ─ -->
+            <line
+              x1="8"
+              y1="30"
+              x2="8"
+              y2="340"
+              stroke="#FDE215"
+              stroke-width=".5"
+              stroke-dasharray="3,3"
+              opacity=".4"
+            />
+            <line
+              x1="4"
+              y1="30"
+              x2="12"
+              y2="30"
+              stroke="#FDE215"
+              stroke-width="1.2"
+              opacity=".6"
+            />
+            <line
+              x1="4"
+              y1="340"
+              x2="12"
+              y2="340"
+              stroke="#FDE215"
+              stroke-width="1.2"
+              opacity=".6"
+            />
+            <text
+              x="-2"
+              y="192"
+              font-family="monospace"
+              font-size="7"
+              fill="#FDE215"
+              opacity=".5"
+              transform="rotate(-90,-2,192)"
+              letter-spacing=".8"
+            >
+              9.6 M HEIGHT
+            </text>
+
+            <line
+              x1="20"
+              y1="356"
+              x2="460"
+              y2="356"
+              stroke="#FDE215"
+              stroke-width=".5"
+              stroke-dasharray="3,3"
+              opacity=".4"
+            />
+            <line
+              x1="20"
+              y1="352"
+              x2="20"
+              y2="360"
+              stroke="#FDE215"
+              stroke-width="1.2"
+              opacity=".6"
+            />
+            <line
+              x1="460"
+              y1="352"
+              x2="460"
+              y2="360"
+              stroke="#FDE215"
+              stroke-width="1.2"
+              opacity=".6"
+            />
+            <text
+              x="195"
+              y="372"
+              font-family="monospace"
+              font-size="7"
+              fill="#FDE215"
+              opacity=".5"
+              letter-spacing=".8"
+            >
+              12.19 M (40FT STANDARD)
+            </text>
+
+            <!-- Glow effects -->
+            <rect
+              x="20"
+              y="220"
+              width="16"
+              height="16"
+              fill="#FDE215"
+              opacity=".6"
+              filter="blur(4px)"
+            />
+            <rect
+              x="444"
+              y="220"
+              width="16"
+              height="16"
+              fill="#FDE215"
+              opacity=".6"
+              filter="blur(4px)"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ══ TICKER ══ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-inner">
+        <span>ISO 668 Certified</span><span class="ticker-sep">◆</span>
+        <span>40FT Standard Modules</span><span class="ticker-sep">◆</span>
+        <span>Deploy in 72 Hours</span><span class="ticker-sep">◆</span>
+        <span>AS/RS Ready</span><span class="ticker-sep">◆</span>
+        <span>Zero Construction Permits</span><span class="ticker-sep">◆</span>
+        <span>MHE Integrated</span><span class="ticker-sep">◆</span>
+        <span>Infinitely Stackable</span><span class="ticker-sep">◆</span>
+        <span>WMS Compatible</span><span class="ticker-sep">◆</span>
+        <!-- duplicate for seamless loop -->
+        <span>ISO 668 Certified</span><span class="ticker-sep">◆</span>
+        <span>40FT Standard Modules</span><span class="ticker-sep">◆</span>
+        <span>Deploy in 72 Hours</span><span class="ticker-sep">◆</span>
+        <span>AS/RS Ready</span><span class="ticker-sep">◆</span>
+        <span>Zero Construction Permits</span><span class="ticker-sep">◆</span>
+        <span>MHE Integrated</span><span class="ticker-sep">◆</span>
+        <span>Infinitely Stackable</span><span class="ticker-sep">◆</span>
+        <span>WMS Compatible</span><span class="ticker-sep">◆</span>
+      </div>
+    </div>
+
+    <!-- ══ STATS BAND ══ -->
+    <div class="stats-band">
+      <div class="stats-inner">
+        <div class="stat-item bracket-card reveal">
+          <div class="stat-num">
+            <span class="count-up" data-target="72" data-suffix="H">72H</span>
+          </div>
+          <div class="stat-desc">Average Deploy Time</div>
+        </div>
+        <div class="stat-item bracket-card reveal d1">
+          <div class="stat-num">
+            <span class="count-up" data-target="40" data-suffix="FT">40FT</span>
+          </div>
+          <div class="stat-desc">ISO Standard Frame</div>
+        </div>
+        <div class="stat-item bracket-card reveal d2">
+          <div class="stat-num">
+            <span class="count-up" data-target="3" data-suffix="×">3×</span>
+          </div>
+          <div class="stat-desc">Faster Fulfilment</div>
+        </div>
+        <div class="stat-item bracket-card reveal d3">
+          <div class="stat-num">
+            <span class="count-up" data-target="60" data-suffix="%">60%</span>
+          </div>
+          <div class="stat-desc">Space Efficiency Gain</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ OUTCOMES ══ -->
+    <section>
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-01 / Outcomes</p>
+        <h2 class="section-title reveal d1">
+          Engineered for<br />real results
+        </h2>
+        <div class="cards-grid">
+          <div class="card bracket-card reveal d1">
+            <div class="card-top-bar"></div>
+            <div class="card-ghost">01</div>
+            <div class="card-icon">
+              <!-- Speed / throughput arrow icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" stroke="#FDE215" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>3× Faster Fulfilment</h3>
+            <p>
+              AS/RS-integrated pod stations eliminate travel time and cut
+              pick-to-ship cycles dramatically without additional headcount.
+            </p>
+            <div class="iso-label">KPI-01 / THROUGHPUT</div>
+          </div>
+          <div class="card bracket-card reveal d2">
+            <div class="card-top-bar"></div>
+            <div class="card-ghost">02</div>
+            <div class="card-icon">
+              <!-- Stacked containers / density icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="13" width="18" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="5" y="8" width="14" height="6" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="7" y="4" width="10" height="5" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="7" y1="13" x2="7" y2="20" stroke="#FDE215" stroke-width="1" opacity="0.5"/>
+                <line x1="12" y1="13" x2="12" y2="20" stroke="#FDE215" stroke-width="1" opacity="0.5"/>
+                <line x1="17" y1="13" x2="17" y2="20" stroke="#FDE215" stroke-width="1" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3>60% Space Efficiency</h3>
+            <p>
+              Vertical stacking and modular footprints reclaim floor area. Every
+              square foot carries measurable ROI.
+            </p>
+            <div class="iso-label">KPI-02 / DENSITY</div>
+          </div>
+          <div class="card bracket-card reveal d3">
+            <div class="card-top-bar"></div>
+            <div class="card-ghost">03</div>
+            <div class="card-icon">
+              <!-- Modular expand / scalability icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="14" y="3" width="7" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="3" y="14" width="7" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <rect x="14" y="14" width="7" height="7" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="10" y1="6.5" x2="14" y2="6.5" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="10" y1="17.5" x2="14" y2="17.5" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="6.5" y1="10" x2="6.5" y2="14" stroke="#FDE215" stroke-width="1.5"/>
+                <line x1="17.5" y1="10" x2="17.5" y2="14" stroke="#FDE215" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>Infinite Scalability</h3>
+            <p>
+              Add or redeploy pods as demand shifts. No structural construction,
+              no sunk costs, no downtime.
+            </p>
+            <div class="iso-label">KPI-03 / SCALABILITY</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ WHAT IT IS ══ -->
+    <section class="what-section">
+      <div class="section-inner">
+        <div class="what-grid">
+          <div class="what-text reveal-left">
+            <p class="section-label">SNS-SEC-02 / Product</p>
+            <h2 class="section-title" style="margin-bottom: 24px">
+              What is<br />Stack n Stock?
+            </h2>
+            <p>
+              Stack n Stock is a modular warehouse infrastructure platform built
+              on ISO standard 40-foot container frames. Each pod arrives as a
+              live, operational system — pre-wired for power, pre-configured for
+              AS/RS, ready to interconnect.
+            </p>
+            <p>
+              Unlike traditional warehousing, pods are portable assets. They can
+              be relocated between facilities, sold, or restructured without
+              construction permits or capital write-downs.
+            </p>
+            <div class="what-features">
+              <div class="feature-row">
+                <div class="f-dot"></div>
+                <div class="f-text">
+                  <strong>Factory-Built &amp; Pre-Tested</strong>Pods leave our
+                  facility fully commissioned — racking, MHE, electrical,
+                  control systems installed and verified.
+                </div>
+              </div>
+              <div class="feature-row">
+                <div class="f-dot"></div>
+                <div class="f-text">
+                  <strong>ISO 668 Compliant Frame</strong>Universal
+                  corner-casting geometry. Travels on standard flatbeds, cranes,
+                  and ship frames worldwide.
+                </div>
+              </div>
+              <div class="feature-row">
+                <div class="f-dot"></div>
+                <div class="f-text">
+                  <strong>WMS &amp; ERP Ready</strong>Open API connectivity for
+                  integration with any warehouse management or ERP platform on
+                  day one.
+                </div>
+              </div>
+            </div>
+            <a href="about.html" class="btn-ghost" style="margin-top: 32px"
+              >Our Story</a
+            >
+          </div>
+
+          <div class="reveal-right">
+            <div class="spec-card bracket-card">
+              <div class="spec-header">
+                <span>POD-A01 / UNIT SPECIFICATION</span>
+                <span>REV-B</span>
+              </div>
+              <div class="spec-body">
+                <div class="spec-row">
+                  <span class="spec-key">Outer Length</span
+                  ><span class="spec-val">12,192 mm (40FT)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Outer Width</span
+                  ><span class="spec-val">2,438 mm (8FT)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Stack Height (max)</span
+                  ><span class="spec-val">9 units</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Payload Capacity</span
+                  ><span class="spec-val">30,480 kg</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Corner Casting</span
+                  ><span class="spec-val">ISO 1161 Std</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Power Supply</span
+                  ><span class="spec-val">3-Phase / Single</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">AS/RS Integration</span
+                  ><span class="spec-val">Standard</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Deploy Time</span
+                  ><span class="spec-val">72 Hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ HOW IT WORKS ══ -->
+    <section class="how-section">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-03 / Process</p>
+        <h2 class="section-title reveal d1">How it<br />works</h2>
+        <div class="steps-wrap">
+          <div class="step reveal d1">
+            <div class="step-dot"></div>
+            <span class="step-num">STEP · 01</span>
+            <h3>Site Assessment</h3>
+            <p>
+              Our engineers survey your facility, map material flow, and
+              identify pod placement zones and utility hookup points.
+            </p>
+          </div>
+          <div class="step reveal d2">
+            <div class="step-dot"></div>
+            <span class="step-num">STEP · 02</span>
+            <h3>Pod Configuration</h3>
+            <p>
+              Select module type — storage, picking, or AS/RS — and specify SKU
+              count, throughput targets, and MHE requirements.
+            </p>
+          </div>
+          <div class="step reveal d3">
+            <div class="step-dot"></div>
+            <span class="step-num">STEP · 03</span>
+            <h3>Factory Build</h3>
+            <p>
+              Pods are constructed at our manufacturing facility, pre-fitted
+              with racking, conveyors, electrical, and control systems.
+            </p>
+          </div>
+          <div class="step reveal d4">
+            <div class="step-dot"></div>
+            <span class="step-num">STEP · 04</span>
+            <h3>Deploy &amp; Connect</h3>
+            <p>
+              Pods are delivered and craned into position. Connect utilities.
+              System is live within 72 hours of arrival on site.
+            </p>
+          </div>
+          <div class="step reveal d5">
+            <div class="step-dot"></div>
+            <span class="step-num">STEP · 05</span>
+            <h3>Scale On Demand</h3>
+            <p>
+              Order more pods as demand grows. Redeploy to new locations. Stack
+              vertically. Realign your entire operation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ USE CASES ══ -->
+    <section class="usecase-section">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-04 / Applications</p>
+        <h2 class="section-title reveal d1">Built for<br />every operation</h2>
+        <div class="usecases-grid">
+          <div class="usecase-card bracket-card reveal d1">
+            <div class="uc-bg"></div>
+            <div class="uc-ghost">A</div>
+            <div class="uc-bar"></div>
+            <h3>Manufacturing Staging</h3>
+            <p>
+              Line-side buffer pods keep sub-assemblies flowing without
+              interrupting production. Kanban-ready, WMS-integrated, and
+              positioned exactly where your process demands.
+            </p>
+            <div class="iso-label">USE-CASE-A / MFG</div>
+          </div>
+          <div class="usecase-card bracket-card reveal d2">
+            <div class="uc-bg"></div>
+            <div class="uc-ghost">B</div>
+            <div class="uc-bar"></div>
+            <h3>E-Commerce Fulfilment</h3>
+            <p>
+              High-velocity pick-and-pack pods with integrated conveyor sorters
+              handle thousands of orders per shift from a fraction of the
+              traditional footprint.
+            </p>
+            <div class="iso-label">USE-CASE-B / ECOM</div>
+          </div>
+          <div class="usecase-card bracket-card reveal d3">
+            <div class="uc-bg"></div>
+            <div class="uc-ghost">C</div>
+            <div class="uc-bar"></div>
+            <h3>Last-Mile Hub</h3>
+            <p>
+              Deploy pods at urban logistics nodes for rapid cross-dock and
+              sortation operations. As your network evolves, your infrastructure
+              relocates with it.
+            </p>
+            <div class="iso-label">USE-CASE-C / 3PL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ROI CALCULATOR ══ -->
+    <section class="calc-section" id="roi">
+      <div class="section-inner">
+        <p class="section-label reveal">SNS-SEC-05 / Calculator</p>
+        <h2 class="section-title reveal d1">ROI Quick<br />Estimate</h2>
+        <div class="calc-wrap">
+          <div id="roi-calc" class="reveal-left">
+            <div class="calc-form">
+              <div class="field">
+                <label for="orders"
+                  >Daily Order Volume
+                  <span class="field-val" id="orders-val"
+                    >1,000 orders/day</span
+                  ></label
+                >
+                <div class="range-wrap">
+                  <div class="range-track">
+                    <div class="range-fill" id="orders-fill"></div>
+                  </div>
+                  <input
+                    type="range"
+                    id="orders"
+                    min="100"
+                    max="10000"
+                    step="100"
+                    value="1000"
+                    aria-label="Daily order volume"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="skus"
+                  >Active SKU Count
+                  <span class="field-val" id="skus-val">5,000 SKUs</span></label
+                >
+                <div class="range-wrap">
+                  <div class="range-track">
+                    <div class="range-fill" id="skus-fill"></div>
+                  </div>
+                  <input
+                    type="range"
+                    id="skus"
+                    min="100"
+                    max="50000"
+                    step="100"
+                    value="5000"
+                    aria-label="Active SKU count"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="area"
+                  >Available Floor Area
+                  <span class="field-val" id="area-val"
+                    >20,000 sq ft</span
+                  ></label
+                >
+                <div class="range-wrap">
+                  <div class="range-track">
+                    <div class="range-fill" id="area-fill"></div>
+                  </div>
+                  <input
+                    type="range"
+                    id="area"
+                    min="1000"
+                    max="100000"
+                    step="1000"
+                    value="20000"
+                    aria-label="Available floor area"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-results bracket-card reveal-right">
+            <div
+              class="iso-label"
+              style="
+                margin-bottom: 28px;
+                border-color: rgba(253, 226, 21, 0.15);
+                color: rgba(253, 226, 21, 0.5);
+              "
+            >
+              INDICATIVE ESTIMATE · NOT A QUOTE
+            </div>
+            <div class="result-row">
+              <span class="result-label">Pods / Stations Required</span>
+              <span>
+                <span class="result-val" id="out-pods">—</span>
+                <span class="result-unit">units</span>
+              </span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Estimated Utilisation</span>
+              <span class="result-val" id="out-util">—</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Indicative Payback Band</span>
+              <span class="result-val" id="out-payback">—</span>
+            </div>
+            <p class="calc-disclaimer">
+              * Indicative only. Figures based on general industry benchmarks.
+              Actual results depend on SKU velocity profiles, site conditions,
+              MHE selection, and operational practices. Contact us for a
+              detailed feasibility study.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <!-- Corner castings -->
+      <div class="cta-casting tl" aria-hidden="true"></div>
+      <div class="cta-casting tr" aria-hidden="true"></div>
+      <div class="cta-casting bl" aria-hidden="true"></div>
+      <div class="cta-casting br" aria-hidden="true"></div>
+      <!-- Mid horizontal rail -->
+      <div class="cta-rail" aria-hidden="true"></div>
+      <!-- Top ISO label stripe (container header) -->
+      <div class="cta-container-stripe" aria-hidden="true">
+        <span>SNS / 40FT POD-SYSTEM</span>
+        <span>MAX GROSS: 30,480 KG &nbsp;·&nbsp; ISO 668 CLASS 1CC</span>
+        <span>REV-B / 2025</span>
+      </div>
+      <!-- Ghost container outline watermark -->
+      <div class="cta-watermark" aria-hidden="true">
+        <svg width="900" height="260" viewBox="0 0 900 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Container body -->
+          <rect x="10" y="40" width="880" height="180" stroke="#FDE215" stroke-width="2"/>
+          <!-- Corner castings -->
+          <rect x="10" y="40" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="866" y="40" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="10" y="196" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <rect x="866" y="196" width="24" height="24" stroke="#FDE215" stroke-width="2"/>
+          <!-- Corrugated ribs -->
+          <line x1="100" y1="40" x2="100" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="190" y1="40" x2="190" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="280" y1="40" x2="280" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="370" y1="40" x2="370" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="460" y1="40" x2="460" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="550" y1="40" x2="550" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="640" y1="40" x2="640" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="730" y1="40" x2="730" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="820" y1="40" x2="820" y2="220" stroke="#FDE215" stroke-width="1.5"/>
+          <!-- Top stripe -->
+          <rect x="10" y="40" width="880" height="10" fill="#FDE215"/>
+          <!-- Crane hook -->
+          <line x1="450" y1="0" x2="450" y2="40" stroke="#FDE215" stroke-width="2"/>
+          <line x1="350" y1="40" x2="450" y2="10" stroke="#FDE215" stroke-width="1.5"/>
+          <line x1="550" y1="40" x2="450" y2="10" stroke="#FDE215" stroke-width="1.5"/>
+          <rect x="438" y="0" width="24" height="10" stroke="#FDE215" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="cta-inner reveal">
+        <p class="section-label">SNS-SEC-06 / Get Started</p>
+        <h2>Ready to stack<br /><span>your advantage?</span></h2>
+        <p>
+          Talk to our solutions engineers. We'll scope your site, configure your
+          pods, and deliver a deployment plan in under a week.
+        </p>
+        <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
+      </div>
+      <!-- Bottom info strip -->
+      <div class="cta-container-base" aria-hidden="true">
+        <span>DEPLOY TIME: 72H</span>
+        <span>ISO 40FT · CORNER CASTING ISO 1161 · MHE INTEGRATED · AS/RS READY</span>
+        <span>POD-A01 / SNS-BUILD-2025</span>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <div class="iso-label">SNS / MODULAR LOGISTICS</div>
+          <img
+            class="nav-logo"
+            src="assets/img/logo.png"
+            alt="Stack n Stock logo"
+            width="70%"
+            height="60%"
+            onerror="
+              this.outerHTML =
+                '<span style=\'color:#FDE215;font-weight:900;font-size:1.1rem;letter-spacing:.05em;\'>STACK N STOCK</span>'
+            "
+          />
+
+          <p class="footer-tagline">
+            Container-native warehouse infrastructure engineered for the next
+            generation of logistics operations.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:hello@stacknstock.com">hello@stacknstock.com</a>
+            </li>
+            <li>
+              <a href="https://www.stacknstock.com">www.stacknstock.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Stack n Stock. All rights reserved.</span
+        >
+        <span class="footer-iso"
+          >ISO 40FT / POD-SYSTEMS / REV-B / BUILD-2025</span
+        >
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
