@@ -1,0 +1,20 @@
+/* Stack n Stock Local Design Framework
+   Tokens, utilities, component primitives, and responsive helpers used by all pages. */
+:root{
+  --sns-radius-xs:6px;
+  --sns-radius-sm:10px;
+  --sns-radius-md:18px;
+  --sns-radius-lg:28px;
+  --sns-space-1:.25rem;
+  --sns-space-2:.5rem;
+  --sns-space-3:.75rem;
+  --sns-space-4:1rem;
+  --sns-space-5:1.5rem;
+  --sns-space-6:2rem;
+  --sns-space-7:3rem;
+  --sns-space-8:4rem;
+  --sns-container:min(1180px,calc(100vw - 40px));
+  --sns-ease:cubic-bezier(.22,1,.36,1);
+}
+.sns-container{width:var(--sns-container);margin-inline:auto}.sns-grid{display:grid;gap:var(--sns-space-5)}.sns-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sns-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sns-grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sns-stack{display:flex;flex-direction:column;gap:var(--sns-space-4)}.sns-cluster{display:flex;flex-wrap:wrap;gap:var(--sns-space-3);align-items:center}.sns-surface{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 70px rgba(0,0,0,.42)}.sns-depth{transform-style:preserve-3d;perspective:1000px}.sns-chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(253,226,21,.26);background:rgba(253,226,21,.08);color:#FDE215;border-radius:999px;padding:.38rem .75rem;font:700 .68rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}.sns-text-balance{text-wrap:balance}.sns-muted{color:var(--muted,#888)}.sns-glow{box-shadow:0 0 48px rgba(253,226,21,.18)}
+@media(max-width:900px){.sns-grid-2,.sns-grid-3,.sns-grid-4{grid-template-columns:1fr}.sns-container{width:min(100% - 32px,1180px)}}

@@ -9,16 +9,36 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   const pctEl   = document.getElementById('loader-pct');
   if (!loader) return;
 
-  let pct = 0;
-  const tick = setInterval(() => {
-    pct += Math.random() * 18 + 4;
-    if (pct >= 100) { pct = 100; clearInterval(tick); }
+  const startTime = Date.now();
+  const duration = 3000; // 3 seconds for the animation to complete
+
+  function update() {
+    const elapsed = Date.now() - startTime;
+    let pct = (elapsed / duration) * 100;
+    // Add a little randomness to make it look lively, but cap at 100
+    pct = Math.min(pct + Math.random() * 2, 100); // up to 2% randomness
+    if (pct >= 100) {
+      pct = 100;
+      cancelAnimationFrame(frame);
+    }
     if (bar) bar.style.width = pct + '%';
     if (pctEl) pctEl.textContent = Math.floor(pct) + '%';
     if (pct >= 100) {
       setTimeout(() => loader.classList.add('hidden'), 300);
     }
-  }, 60);
+    if (pct < 100) {
+      frame = requestAnimationFrame(update);
+    }
+  }
+
+  let frame = requestAnimationFrame(update);
+
+  // Fallback: hide loader after duration + 1 second (to be safe)
+  setTimeout(() => {
+    if (!loader.classList.contains('hidden')) {
+      loader.classList.add('hidden');
+    }
+  }, duration + 1000);
 })();
 
 /* ══ CUSTOM CURSOR ══ */
@@ -57,66 +77,9 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; ring.style.opacity = '1'; });
 })();
 
-/* ══ HERO PARTICLE CANVAS ══ */
-(function() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas || prefersReduced) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const COUNT = 60;
-  for (let i = 0; i < COUNT; i++) {
-    particles.push({
-      x: Math.random() * 1200,
-      y: Math.random() * 800,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      a: Math.random()
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-      p.a += 0.005;
-      const alpha = (Math.sin(p.a) * 0.3 + 0.4) * 0.6;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(253,226,21,${alpha})`;
-      ctx.fill();
-    });
-
-    // Draw connections
-    particles.forEach((a, i) => {
-      particles.slice(i + 1).forEach(b => {
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(253,226,21,${(1 - dist/120) * 0.08})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      });
-    });
-
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
+/* ══ HERO PARTICLE CANVAS ══
+   Replaced by assets/js/immersive3d.js for a deeper 3D visual system.
+*/
 
 /* ══ NAVBAR SCROLL ══ */
 (function() {
@@ -226,6 +189,7 @@ function getCraneId(inputId) {
 }
 
 function updateCraneSlider(input) {
+  if (!input || !input.parentElement) return;
   const fill = input.parentElement.querySelector('.range-fill');
   const crane = input.parentElement.querySelector('.crane-thumb');
   if (!fill && !crane) return;
@@ -233,7 +197,7 @@ function updateCraneSlider(input) {
   const min = parseFloat(input.min) || 0;
   const max = parseFloat(input.max) || 100;
   const val = parseFloat(input.value);
-  const pct = (val - min) / (max - min);
+  const pct = max === min ? 0 : (val - min) / (max - min);
 
   if (fill) fill.style.width = (pct * 100) + '%';
 
@@ -303,7 +267,7 @@ window.addEventListener('resize', () => {
   if (outUtil) outUtil.style.transition = 'opacity .15s, transform .15s';
   if (outPayback) outPayback.style.transition = 'opacity .15s, transform .15s';
 
-  [ordersEl, skusEl, areaEl].forEach(el => el.addEventListener('input', update));
+  [ordersEl, skusEl, areaEl].filter(Boolean).forEach(el => el.addEventListener('input', update));
   update();
 })();
 
@@ -380,3 +344,9 @@ document.querySelectorAll('.card, .usecase-card').forEach(card => {
     card.style.setProperty('--my', y + '%');
   });
 });
+
+/* ══ CONTAINER POD INITIALIZATION ══ */
+(function() {
+  const init = window.StackNStockPod && window.StackNStockPod.initializeContainerPod;
+  if (typeof init === 'function') init();
+})();
