@@ -22,7 +22,9 @@
     let width = 0;
     let height = 0;
     let dpr = 1;
-    let frame = 0;
+    let timeSec = 0;
+    let rafId = 0;
+    let running = false;
     const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
     const nodes = [];
     const cubeCount = 42;
@@ -121,7 +123,8 @@
     }
 
     function animate(now) {
-      frame = now * 0.001;
+      if (!running) return;
+      timeSec = now * 0.001;
       mouse.x += (mouse.tx - mouse.x) * 0.05;
       mouse.y += (mouse.ty - mouse.y) * 0.05;
       ctx.clearRect(0, 0, width, height);
@@ -132,7 +135,7 @@
       gradient.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
-      drawGrid(frame);
+      drawGrid(timeSec);
 
       const projected = nodes.map((node) => {
         node.x += node.vx;
@@ -169,7 +172,7 @@
         .sort((a, b) => b.node.z - a.node.z)
         .forEach(({ node, point }) => drawCube(point.x, point.y, node.s * point.scale, point.alpha, node.spin));
 
-      window.requestAnimationFrame(animate);
+      rafId = window.requestAnimationFrame(animate);
     }
 
     hero.addEventListener('pointermove', (event) => {
@@ -181,7 +184,23 @@
     window.addEventListener('resize', resize, { passive: true });
     resize();
     seed();
-    window.requestAnimationFrame(animate);
+    const start = () => {
+      if (running) return;
+      running = true;
+      rafId = window.requestAnimationFrame(animate);
+    };
+    const stop = () => {
+      running = false;
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+    start();
   }
 
   function initTiltCards() {

@@ -139,8 +139,14 @@ if (!prefersReduced) {
 
 /* ══ SCROLL REVEAL ══ */
 (function() {
+  if (window.__snsRevealObserverInitialized) return;
+  window.__snsRevealObserverInitialized = true;
   const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   if (!els.length) return;
+  if (!('IntersectionObserver' in window) || prefersReduced) {
+    els.forEach(el => el.classList.add('visible'));
+    return;
+  }
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });

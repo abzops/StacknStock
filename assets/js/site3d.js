@@ -19,6 +19,8 @@
   }
 
   function initInView() {
+    if (window.__snsRevealObserverInitialized) return;
+    window.__snsRevealObserverInitialized = true;
     const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .founder-profile, .team-person, .bracket-card, .card, .usecase-card, .cert-card, .contact-card');
     if (!targets.length) return;
     if (!('IntersectionObserver' in window) || prefersReduced) {

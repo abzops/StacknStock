@@ -169,8 +169,11 @@
     const total = 24000;
     const falls = [[0.00, 0.11], [0.13, 0.24], [0.26, 0.37]];
     const removals = [[2, 0.40, 0.56], [1, 0.59, 0.75], [0, 0.78, 0.94]];
+    let rafId = 0;
+    let running = false;
 
     function frame(now) {
+      if (!running) return;
       const t = (now % total) / total;
       resetBase();
 
@@ -205,9 +208,25 @@
         }
       }
 
-      requestAnimationFrame(frame);
+      rafId = requestAnimationFrame(frame);
     }
 
-    requestAnimationFrame(frame);
+    const start = () => {
+      if (running) return;
+      running = true;
+      rafId = requestAnimationFrame(frame);
+    };
+    const stop = () => {
+      running = false;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+    start();
   });
 })();
